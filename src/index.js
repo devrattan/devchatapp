@@ -39,7 +39,7 @@ io.on('connection',(socket)=>{
       if(user){ 
            if(filter.isProfane(message)){
             callback('message not delivered')
-            return  socket.emit('message',generateMessage('Profanity not allowed'));
+            return  socket.emit('message',generateMessage("Admin",'Profanity not allowed'));
     }  
       io.to(user.room).emit('message',generateMessage(user.username,message));
       callback()
